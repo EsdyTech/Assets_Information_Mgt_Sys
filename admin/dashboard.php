@@ -1,0 +1,302 @@
+<?php 
+include('head.php');
+include('../includes/session.php');
+include('dashboard_action.php');
+
+?>
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <?php include('sidebar.php');?>
+        <!-- Header top area start-->
+        <div class="content-inner-all">
+        <?php include('header.php');?>
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 small-dn">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="breadcome-heading">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Dashboard</a> <span class="bread-slash"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area des-none mg-b-30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+												<input type="text" placeholder="Search..." class="form-control">
+												<a href=""><i class="fa fa-search"></i></a>
+											</form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Dashboard</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- income order visit user Start -->
+            <div class="income-order-visit-user-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total income-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara">
+                                            <p>Asset Category</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $assetCat;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range">
+                                        <p>Total Asset Category</p>
+                                        <span class="income-percentange">100% <i class="fa fa-users"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara order-cl">
+                                            <p>Department</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $dept;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline6"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range order-cl">
+                                        <p>Total Department</p>
+                                        <span class="income-percentange">26% <i class="fa fa-institution"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total visitor-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara visitor-cl">
+                                            <p> Branches</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $branch;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range visitor-cl">
+                                        <p>Total Branches</p>
+                                        <span class="income-percentange">55% <i class="fa fa-home"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total user-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara low-value-cl">
+                                            <p>Assets</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $assets;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range low-value-cl">
+                                        <p>Total Assets</p>
+                                        <span class="income-percentange">89% <i class="fa fa-file-archive-o"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total income-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara">
+                                            <p>Branch Users</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $branchUsers;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range">
+                                        <p>Total Branch Users</p>
+                                        <span class="income-percentange">100% <i class="fa fa-users"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara order-cl">
+                                            <p>Sold Assets</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $sold;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline6"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range order-cl">
+                                        <p>Total Sold Assets</p>
+                                        <span class="income-percentange">26% <i class="fa fa-institution"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total visitor-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara visitor-cl">
+                                            <p> Vendors</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $vendor;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range visitor-cl">
+                                        <p>Total Vendors</p>
+                                        <span class="income-percentange">55%<i class="fa fa-home"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="income-dashone-total user-monthly shadow-reset nt-mg-b-30">
+                                <div class="income-title">
+                                    <div class="main-income-head">
+                                        <h2>Total</h2>
+                                        <div class="main-income-phara low-value-cl">
+                                            <p>Assets Transfer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="income-dashone-pro">
+                                    <div class="income-rate-total">
+                                        <div class="price-adminpro-rate">
+                                            <h3><span class="counter"><?php echo $assetTrans;?></span></h3>
+                                        </div>
+                                        <div class="price-graph">
+                                            <span id="sparkline5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="income-range low-value-cl">
+                                        <p>Total Asset Transfer</p>
+                                        <span class="income-percentange">89% <i class="fa fa-file-archive-o"></i></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Transitions End-->
+        </div>
+    </div>
+    <?php include('footer.php');?>
